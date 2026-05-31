@@ -73,6 +73,8 @@ router.post("/register.php", async (req, res) => {
   } = req.body;
 
   try {
+    console.log("server");
+    
     const existing = await AlumniUser.findOne({
       $or: [{ sap_id }, { email }],
     });
