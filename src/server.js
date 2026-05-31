@@ -12,6 +12,14 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/ping", (_req, res) => {
+  res.json({
+    success: true,
+    message: "Alumni API is running",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.use(authRoutes);
 app.use(jobRoutes);
 
